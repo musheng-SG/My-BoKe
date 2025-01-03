@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh" style="background: #1a1a1a;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #1a1a1a !important;
+            color: #fff;
+        }
+        
+        #particles-js {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 140px);
+            z-index: -1;
+            background: #1a1a1a;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: transparent !important;
+        }
+        
+        header {
+            background: #1a1a1a !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .nav-links a:hover {
+            color: #00a8ff;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+        }
+        
+        .site-title {
+            color: #007bff;
+            font-size: 1.44rem;
+        }
+        
+        #home {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 5%;
+            padding-top: 80px;
+            background: transparent !important;
+        }
+        
+        .personal-info {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(0, 168, 255, 0.2);
+            box-shadow: 0 0 40px rgba(0, 168, 255, 0.2);
+            margin: 0 auto 2rem;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .avatar:hover img {
+            transform: scale(1.1);
+        }
+        
+        .info-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .info-text .name {
+            font-size: 2.8rem;
+            margin: 0 0 0.5rem;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(0, 168, 255, 0.5);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .info-text .title {
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 0 0 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-text .bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-shadow: none;
+        }
+        
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            background: rgba(0, 168, 255, 0.8);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 168, 255, 0.2);
+        }
+        
+        .blog-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 168, 255, 0.9);
+        }
+        
+        footer {
+            background: rgba(26, 26, 26, 0.3) !important;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            color: #00a8ff;
+            opacity: 1;
+            transform: translateY(-3px);
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+        }
+        
+        .social-links p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#home" class="site-title">MuSheng-SG</a>
+                </div>
+                <div class="nav-links">
+                    <a href="portfolio.html">我的文章</a>
+                    <a href="harmonyos.html">我的HarmonyOS</a>
+                    <a href="about.html">关于我</a>
+                    <a href="contact.html">联系我</a>
+                </div>
+            </nav>
+        </header>
+
+        <section id="home">
+            <div class="personal-info">
+                <div class="avatar">
+                    <img src="./image001.png" alt="个人头像">
+                </div>
+                <div class="info-text">
+                    <h3 class="name">沐笙</h3>
+                    <p class="title">学生</p>
+                    <p class="bio">一个埋藏于地底下正在往上爬的网络安全工程师和HarmonyOS开发者</p>
+                    <div class="button-group">
+                        <a href="portfolio.html" class="blog-link">查看我的博客 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/musheng-SG" target="_blank"><i class="fab fa-github"></i></a>
+                <p>&copy; 2024 沐笙. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 180,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#00a8ff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.9,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.5,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 4,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 3,
+                        size_min: 0.5,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 120,
+                    color: '#00a8ff',
+                    opacity: 0.8,
+                    width: 1.5
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'bounce',
+                    bounce: true,
+                    attract: {
+                        enable: true,
+                        rotateX: 800,
+                        rotateY: 1500
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 250,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 12
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+
+</html>

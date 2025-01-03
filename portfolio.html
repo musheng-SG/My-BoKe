@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品 - MuSheng-SG</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 暗色主题样式 */
+        
+        body {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            backdrop-filter: none;
+        }
+        
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .portfolio-page {
+            background: transparent !important;
+        }
+        
+        main {
+            background: transparent !important;
+        }
+        
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .site-title {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            font-size: 1.44rem;
+        }
+        
+        .portfolio-content h1 {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .portfolio-title {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .portfolio-description {
+            color: #e0e0e0;
+        }
+        
+        .project-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        
+        .read-more {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+        
+        .more-articles-btn {
+            background: rgba(0, 123, 255, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        footer {
+            background: rgba(26, 26, 26, 0.3) !important;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            color: #007bff;
+            opacity: 1;
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+        
+        .social-links p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html" class="site-title">MuSheng-SG</a>
+                </div>
+                <div class="nav-links">
+                    <a href="portfolio.html">我的文章</a>
+                    <a href="harmonyos.html">我的HarmonyOS</a>
+                    <a href="about.html">关于我</a>
+                    <a href="contact.html">联系我</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="portfolio-page">
+            <section class="portfolio-content">
+                <h1>我的文章</h1>
+                <div class="portfolio-grid">
+                    <article class="portfolio-item" style="--item-index: 0;">
+                        <h2 class="portfolio-title">DC-1 靶场渗透测试</h2>
+                        <div class="portfolio-details">
+                            <p class="portfolio-description">
+                                基于Vulnhub的DC-1靶场渗透测试实践，通过多种渗透测试技术获取系统权限。
+                                <br><br>主要技术要点：
+                                <br>• 网络扫描与信息收集
+                                <br>• Drupal框架漏洞利用
+                                <br>• MySQL数据库渗透
+                                <br>• 交互式Shell获取
+                                <br>• Root权限提升
+                                <br><br>使用工具：
+                                <br>• nmap、arp-scan - 网络扫描
+                                <br>• msfconsole - 漏洞利用
+                                <br>• MySQL - 数据库操作
+                                <br>• find - 权限提升
+                            </p>
+                            <div class="project-links">
+                                <span class="project-tag">渗透测试</span>
+                                <span class="project-tag">Drupal</span>
+                                <span class="project-tag">权限提升</span>
+                                <a href="https://blog.csdn.net/2301_80109771/article/details/144085238?fromshare=blogdetail&sharetype=blogdetail&sharerId=144085238&sharerefer=PC&sharesource=2301_80109771&sharefrom=from_link" class="read-more" target="_blank">
+                                    查看更多 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item" style="--item-index: 1;">
+                        <h2 class="portfolio-title">DC-2 靶场渗透测试</h2>
+                        <div class="portfolio-details">
+                            <p class="portfolio-description">
+                                基于Vulnhub的DC-2靶场渗透测试实践，通过多种渗透测试技术获取系统权限。
+                                <br><br>主要技术要点：
+                                <br>• 网络扫描与信息收集
+                                <br>• WordPress用户枚举与密码爆破
+                                <br>• SSH服务利用
+                                <br>• rbash逃逸
+                                <br>• Git提权获取root权限
+                                <br><br>使用工具：
+                                <br>• nmap、arp-scan - 网络扫描
+                                <br>• wpscan、cewl - WordPress渗透
+                                <br>• SSH - 远程连接
+                                <br>• Git - 权限提升
+                            </p>
+                            <div class="project-links">
+                                <span class="project-tag">渗透测试</span>
+                                <span class="project-tag">WordPress</span>
+                                <span class="project-tag">权限提升</span>
+                                <a href="https://blog.csdn.net/2301_80109771/article/details/144491133?fromshare=blogdetail&sharetype=blogdetail&sharerId=144491133&sharerefer=PC&sharesource=2301_80109771&sharefrom=from_link" class="read-more" target="_blank">
+                                    查看更多 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item" style="--item-index: 2;">
+                        <h2 class="portfolio-title">SSH私钥泄露</h2>
+                        <div class="portfolio-details">
+                            <p class="portfolio-description">
+                                基于靶场环境的SSH私钥泄露渗透测试实践。
+                                <br><br>主要技术要点：
+                                <br>• 网络扫描与信息收集
+                                <br>• 使用nmap进行端口扫描
+                                <br>• dirb进行目录扫描
+                                <br>• SSH私钥获取与破解
+                                <br>• John the Ripper工具使用
+                                <br><br>使用工具：
+                                <br>• arp-scan - 网络探测
+                                <br>• nmap - 端口扫描
+                                <br>• dirb - 目录扫描
+                                <br>• ssh2john - SSH私钥转换
+                                <br>• John the Ripper - 密码破解
+                            </p>
+                            <div class="project-links">
+                                <span class="project-tag">渗透测试</span>
+                                <span class="project-tag">SSH</span>
+                                <span class="project-tag">密码破解</span>
+                                <a href="https://blog.csdn.net/2301_80109771/article/details/143042652?fromshare=blogdetail&sharetype=blogdetail&sharerId=143042652&sharerefer=PC&sharesource=2301_80109771&sharefrom=from_link" class="read-more" target="_blank">
+                                    查看更多 <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="more-articles">
+                    <a href="https://blog.csdn.net/2301_80109771?spm=1000.2115.3001.5343" class="more-articles-btn" target="_blank">
+                        更多文章 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/musheng-SG" target="_blank"><i class="fab fa-github"></i></a>
+                <p>&copy; 2024 沐笙. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 250,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#00a8ff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 1,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        opacity_min: 0.8,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 4,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 3,
+                        size_min: 1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00a8ff',
+                    opacity: 1,
+                    width: 1.5
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'bounce',
+                    bounce: true,
+                    attract: {
+                        enable: true,
+                        rotateX: 1500,
+                        rotateY: 1800
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 200,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 10
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+
+</html>

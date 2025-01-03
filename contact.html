@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh" style="background: #1a1a1a;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 - MuSheng-SG</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #1a1a1a !important;
+            color: #fff;
+        }
+        
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background: #1a1a1a;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            backdrop-filter: none;
+        }
+        
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .contact-page {
+            background: transparent !important;
+        }
+        
+        main {
+            background: transparent !important;
+        }
+        
+        footer {
+            background: rgba(26, 26, 26, 0.3) !important;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .site-title {
+            color: #007bff;
+            font-size: 1.44rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-content {
+            padding-top: 80px;
+            /* 为固定导航栏留出空间 */
+        }
+        
+        .contact-content h1 {
+            color: #ffffff;
+            margin: 3rem 0;
+            font-size: 5rem;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 4px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-content h1::before {
+            display: none;
+        }
+        
+        .contact-grid {
+            display: grid;
+            gap: 3rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-delay: calc(var(--item-index) * 0.2s);
+            background: none;
+            border: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+        
+        .contact-item i {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-note {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.8s;
+            opacity: 0;
+            background: none;
+            border: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+        
+        .contact-note h2 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .contact-note p {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .contact-tips {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-tips li {
+            color: #ffffff;
+            font-size: 1.2rem;
+            background: none;
+            border: none;
+            backdrop-filter: none;
+            padding: 0;
+            position: relative;
+        }
+        
+        .contact-tips li::before {
+            content: '•';
+            position: absolute;
+            left: -1.5rem;
+            color: #ffffff;
+        }
+        
+        .qr-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+            white-space: nowrap;
+            display: inline-block;
+        }
+        
+        .qr-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            color: #007bff;
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        
+        .social-links p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 30px #ffffff, 0 0 50px #ffffff, 0 0 70px #ffffff, 0 0 90px rgba(255, 255, 255, 0.8), 0 0 110px rgba(255, 255, 255, 0.6);
+            }
+            to {
+                text-shadow: 0 0 40px #ffffff, 0 0 60px #ffffff, 0 0 80px #ffffff, 0 0 100px rgba(255, 255, 255, 0.8), 0 0 120px rgba(255, 255, 255, 0.6);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .image-viewer.active {
+            opacity: 1;
+            display: flex;
+        }
+        
+        .viewer-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            padding: 20px;
+        }
+        
+        .viewer-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+        
+        .qr-code img {
+            display: none;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 1rem auto;
+        }
+        
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            background: rgba(0, 168, 255, 0.8);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 168, 255, 0.2);
+        }
+        
+        .blog-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 168, 255, 0.9);
+        }
+        
+        .nav-links a:hover {
+            color: #00a8ff;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+        }
+        
+        .social-links a:hover {
+            color: #00a8ff;
+            opacity: 1;
+            transform: translateY(-3px);
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+        }
+        
+        .email-text {
+            color: #ffffff !important;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 粒子背景容器 -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html" class="site-title">MuSheng-SG</a>
+                </div>
+                <div class="nav-links">
+                    <a href="portfolio.html">我的文章</a>
+                    <a href="harmonyos.html">我的HarmonyOS</a>
+                    <a href="about.html">关于我</a>
+                    <a href="contact.html">联系我</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="contact-page">
+            <section class="contact-content">
+                <h1>联系方式</h1>
+                <div class="contact-grid">
+                    <div class="contact-item email-section" style="--item-index: 0;">
+                        <i class="fas fa-envelope"></i>
+                        <h3>QQ邮箱</h3>
+                        <p class="email-text">877432195@qq.com</p>
+                    </div>
+
+                    <div class="contact-item" style="--item-index: 1;">
+                        <i class="fab fa-weixin"></i>
+                        <h3>微信</h3>
+                        <div class="qr-code">
+                            <button class="qr-btn">查看二维码</button>
+                            <img src="wx.png" alt="微信二维码" style="display: none; width: 300px; height: auto;">
+                        </div>
+                    </div>
+
+                    <div class="contact-item" style="--item-index: 2;">
+                        <i class="fab fa-qq"></i>
+                        <h3>QQ</h3>
+                        <div class="qr-code">
+                            <button class="qr-btn">查看二维码</button>
+                            <img src="qq.png" alt="QQ二维码" style="display: none; width: 300px; height: auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-note">
+                    <h2>联系说明</h2>
+                    <p>欢迎通过以上方式与我联系，我会尽快回复您的消息。</p>
+                    <ul class="contact-tips">
+                        <li>工作日回复更及时</li>
+                        <li>请注明来意</li>
+                        <li>欢迎技术交流</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/musheng-SG" target="_blank"><i class="fab fa-github"></i></a>
+                <p>&copy; 2024 沐笙. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 大图显示容器 -->
+    <div id="imageViewer" class="image-viewer">
+        <div class="viewer-content">
+            <img id="enlargedImage" src="" alt="放大图片">
+        </div>
+    </div>
+
+    <!-- 添加新的粒子效果脚本 -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js?v=1"></script>
+    <script>
+        // 确保脚本加载完成
+        window.addEventListener('load', function() {
+            if (window.particlesJS) {
+                console.log('Particles.js loaded successfully');
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 250,
+                            density: {
+                                enable: true,
+                                value_area: 800
+                            }
+                        },
+                        color: {
+                            value: '#00a8ff'
+                        },
+                        shape: {
+                            type: 'circle'
+                        },
+                        opacity: {
+                            value: 1,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 2,
+                                opacity_min: 0.8,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 4,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 3,
+                                size_min: 1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: '#00a8ff',
+                            opacity: 1,
+                            width: 1.5
+                        },
+                        move: {
+                            enable: true,
+                            speed: 3,
+                            direction: 'none',
+                            random: true,
+                            straight: false,
+                            out_mode: 'bounce',
+                            bounce: true,
+                            attract: {
+                                enable: true,
+                                rotateX: 1500,
+                                rotateY: 1800
+                            }
+                        }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: 'grab'
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: 'push'
+                            },
+                            resize: true
+                        },
+                        modes: {
+                            grab: {
+                                distance: 200,
+                                line_linked: {
+                                    opacity: 1
+                                }
+                            },
+                            push: {
+                                particles_nb: 10
+                            }
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+    </script>
+
+    <!-- 保持其他脚本不变 -->
+    <script>
+        // 保持现有的二维码查看器脚本不变
+        const qrButtons = document.querySelectorAll('.qr-btn');
+        const imageViewer = document.getElementById('imageViewer');
+        const enlargedImage = document.getElementById('enlargedImage');
+
+        // 为每个按钮添加点击事件
+        qrButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const img = this.nextElementSibling;
+                if (!img.src) {
+                    img.src = img.getAttribute('data-src') || img.getAttribute('src');
+                }
+                imageViewer.style.display = 'flex';
+                enlargedImage.src = img.src;
+                setTimeout(() => {
+                    imageViewer.classList.add('active');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // 关闭查看器的函数
+        function closeViewer() {
+            imageViewer.classList.remove('active');
+            setTimeout(() => {
+                imageViewer.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // 点击背景关闭大图
+        imageViewer.addEventListener('click', function(e) {
+            if (e.target === imageViewer || e.target === enlargedImage) {
+                closeViewer();
+            }
+        });
+
+        // ESC键关闭查看器
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageViewer.classList.contains('active')) {
+                closeViewer();
+            }
+        });
+    </script>
+</body>
+
+</html>

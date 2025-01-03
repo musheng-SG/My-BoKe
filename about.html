@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - MuSheng-SG</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            position: relative;
+            z-index: 1000;
+            background: #000000 !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .site-title {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            font-size: 1.44rem;
+        }
+        
+        .about-content {
+            padding: 2rem;
+            margin: 2rem auto;
+            margin-top: 80px;
+            max-width: 800px;
+            color: #e0e0e0;
+        }
+        
+        h1 {
+            color: #ffffff;
+            margin: 3rem 0;
+            font-size: 3rem;
+            text-align: left;
+            font-weight: normal;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1::before {
+            display: none;
+        }
+        
+        .about-text h2 {
+            color: #007bff;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+        
+        .about-text p {
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skills-list li {
+            color: #e0e0e0;
+            padding: 0.5rem 1rem;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: rgba(26, 26, 26, 0.3) !important;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            color: #007bff;
+            opacity: 1;
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+        
+        .social-links p {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        @keyframes glow {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html" class="site-title">MuSheng-SG</a>
+                </div>
+                <div class="nav-links">
+                    <a href="portfolio.html">我的文章</a>
+                    <a href="harmonyos.html">我的HarmonyOS</a>
+                    <a href="about.html">关于我</a>
+                    <a href="contact.html">联系我</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="about-page">
+            <section class="about-content">
+                <h1 style="color: #ffffff; font-weight: bold;">关于我</h1>
+                <div class="about-text">
+                    <h2>技能专长</h2>
+                    <ul class="skills-list">
+                        <li style="color: #000000;">网络安全</li>
+                        <li style="color: #000000;">HarmonyOS开发</li>
+                        <li style="color: #000000;">Web开发</li>
+                    </ul>
+
+                    <h2>项目经验</h2>
+                    <p>1.负责学校机房网络的规划、部署与维护，确保网络设备的正常运行与高效连接。
+                        <br><br>• 设计网络架构，完成IP地址规划及设备配置，提升网络管理效率80%。
+                        <br>• 配置交换机、路由器等网络设备，优化数据传输效率，网络延迟降低70%。
+                        <br>• 调试机房内的网络连接，排查并解决网络故障，故障恢复时间缩短至1分钟。
+                        <br>• 完成网络测试与验收，确保网络稳定性和安全性，项目一次性通过验收，师生满意度达到100%。
+                    </p>
+
+                    <p>2.在校期间，多次参加网络安全相关竞赛，主要围绕网络协议分析、漏洞检测及防御技术等展开。
+                        <br><br>• 运用Wireshark进行网络流量分析，精准定位潜在威胁
+                        <br>• 使用Nmap和Burp Suite扫描系统漏洞并制定防御方案，修复漏洞率达100%
+                        <br>• 通过Metasploit进行漏洞利用测试，验证系统安全性
+                        <br>• 在攻防环节，结合IDS/IPS配置快速阻断攻击，利用Splunk分析日志追踪攻击源
+                        <br>• 通过加密技术保护数据传输安全，保护成功率达99%
+                    </p>
+
+                    <p>3.参与网络安全竞赛，运用Wireshark进行网络流量分析，精准定位潜在威胁。
+                        <br><br>• 使用Nmap和Burp Suite扫描系统漏洞，制定防御方案
+                        <br>• 综合提升漏洞检测和防御能力，为实际应用打下坚实基础
+                        <br>• 使用captfencoder来进行编码的解密加密
+                    </p>
+
+                    <p>4.参与2024HarmonyOS创新赛负责软件运行安全相关工作。
+                        <br><br>• 设计安全架构，实施漏洞扫描与修复，确保系统安全性
+                        <br>• 部署WAF（Web应用防火墙）和SSL加密，提升应用层安全，降低安全事件发生率99%
+                        <br>• 定期进行代码安全审查和渗透测试，及时发现并修复潜在漏洞，修复率达到99%
+                        <br>• 制定运行时安全监控方案，有效防范恶意攻击与数据泄露风险，监控覆盖率达到100%
+                        <br>• 通过全程安全保障措施，成功提升软件运行稳定性与安全性，项目顺利交付，客户满意度达到100%
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/musheng-SG" target="_blank"><i class="fab fa-github"></i></a>
+                <p>&copy; 2024 沐笙. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 350,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#007bff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.9,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1.5,
+                        opacity_min: 0.6,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 3,
+                        size_min: 2,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 100,
+                    color: '#007bff',
+                    opacity: 0.8,
+                    width: 2
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'bounce',
+                    bounce: true,
+                    attract: {
+                        enable: true,
+                        rotateX: 1200,
+                        rotateY: 1800
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 300,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 20
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的HarmonyOS - MuSheng-SG</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 暗色主题样式 */
+        
+        body {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            backdrop-filter: none;
+        }
+        
+        header {
+            background: rgba(26, 26, 26, 0.95);
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .nav-links a:hover {
+            color: #00a8ff;
+            text-shadow: 0 0 15px rgba(0, 168, 255, 0.7);
+        }
+        
+        .site-title {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            font-size: 1.44rem;
+        }
+        
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .portfolio-title {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .portfolio-description {
+            color: #e0e0e0;
+        }
+        
+        .project-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        
+        .app-modal {
+            backdrop-filter: blur(15px);
+        }
+        
+        .app-modal-content {
+            background: rgba(26, 26, 26, 0.95);
+            color: #fff;
+        }
+        
+        .app-modal-text h2 {
+            color: #007bff;
+            text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+        
+        .app-modal-text p {
+            color: #e0e0e0;
+        }
+        
+        footer {
+            background: rgba(26, 26, 26, 0.3) !important;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .harmonyos-title {
+            color: #ffffff;
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html" class="site-title">MuSheng-SG</a>
+                </div>
+                <div class="nav-links">
+                    <a href="portfolio.html">我的文章</a>
+                    <a href="harmonyos.html">我的HarmonyOS</a>
+                    <a href="about.html">关于我</a>
+                    <a href="contact.html">联系我</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="harmonyos-page">
+            <section class="harmonyos-content">
+                <h1 style="color: #ffffff; font-size: 3rem;">我的HarmonyOS</h1>
+                <div class="portfolio-grid">
+                    <article class="portfolio-item" style="--item-index: 0;">
+                        <h2 class="portfolio-title">绿色之舟</h2>
+                        <div class="portfolio-details">
+                            <p class="portfolio-description">
+                                应用介绍: 基于HarmonyOS打造的有关垃圾分类,健康生活,绿色出行的生活APP。
+                                <br><br>主要功能：
+                                <br>• 碳足迹追踪与减排建议
+                                <br>• 垃圾分类与资源回收
+                                <br>• 节能与水资源管理
+                                <br>• 绿色饮食与食品浪费控制
+                                <br>• 绿色出行推荐
+                                <br>• 绿色社区与互动功能
+                                <br>• 垃圾分类指导
+                                <br><br>技术要点：
+                                <br>• HarmonyOS应用开发
+                                <br>• 分布式技术
+                                <br>• 设备互联互通
+                                <br>• 安全加密通信
+                            </p>
+                            <div class="project-links">
+                                <div class="project-tags">
+                                    <span class="project-tag">低碳生活</span>
+                                    <span class="project-tag">环保</span>
+                                    <span class="project-tag">HarmonyOS</span>
+                                </div>
+                                <a href="#" class="app-button" id="appInfoBtn">关于应用 <i class="fas fa-mobile-alt"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- 应用介绍弹窗 -->
+        <div id="appModal" class="app-modal">
+            <div class="app-modal-content">
+                <div class="app-modal-text">
+                    <h2>关于"绿色之舟"</h2>
+                    <p>"绿色之舟"作为一款全面绿色生活指导应用，致力于通过技术创新和个性化服务，推动用户在日常生活中实现更环保、更健康、更可持续的生活方式。随着全球环保意识的提升，个人行为在环境保护中的作用愈发重要，而"绿色之舟"正是应对这一需求而诞生，旨在为每个用户提供量身定制的绿色生活解决方案，帮助他们轻松实现环保目标。</p>
+                    <p>通过整合先进的人工智能、大数据分析和物联网技术，应用不仅能够准确地计算用户的碳足迹、监控能源消耗、指导垃圾分类和绿色饮食，还提供了基于用户行为的实时反馈与建议，帮助用户不断调整和优化自己的环保行动。"绿色之舟"通过智能化、系统化的方式，将环保行为融入到日常生活中，从而使得绿色生活不再是一个遥不可及的理想，而是变成了可以持续践行的现实。</p>
+                    <p>在个性化服务方面，应用通过对用户行为的分析，提供针对性的建议，确保每一个绿色生活目标都能够量化并实现。此外，应用的奖励机制与社区互动功能，增强了用户的参与感和社交性，帮助用户在绿色生活的道路上坚持下去。无论是在减少碳排放、节能减排，还是推动绿色出行、推广垃圾分类，应用都提供了可操作的工具和指导，确保用户在这些领域内都能做出积极的改变。</p>
+                    <p>除了帮助个人用户实现绿色生活，"绿色之舟"还关注社会层面的绿色行动。通过与企业、学校、社区等多方合作，应用致力于打造一个全民参与的绿色生态系统。通过环保教育、绿色挑战、公益活动等方式，应用鼓励社会各界共同参与到环保行动中，推动整个社会朝着可持续发展的方向前进。</p>
+                    <p>"绿色之舟"的目标不仅是帮助用户实现绿色生活，更是通过技术的力量和社交的互动，引领更多人加入到环保行动中。通过逐步积累个体和集体的环保行为，应用的长期目标是实现全球范围内的环保行动网络，推动更加绿色、健康、可持续的未来。</p>
+                    <p>总之，"绿色之舟"不仅是一个帮助用户实现绿色生活的工具，更是一个推动全球环保理念和行动的桥梁。通过它，我们不仅能够为环境保护做出贡献，还能够改善个人生活质量，享受更加健康、和谐的生活方式。在这个变革的时代，"绿色之舟"将成为每一个用户绿色生活的得力助手，为推动全球可持续发展贡献智慧与力量。</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/musheng-SG" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2024 沐笙. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 250,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#00a8ff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 1,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        opacity_min: 0.8,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 4,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 3,
+                        size_min: 1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#00a8ff',
+                    opacity: 1,
+                    width: 1.5
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'bounce',
+                    bounce: true,
+                    attract: {
+                        enable: true,
+                        rotateX: 1500,
+                        rotateY: 1800
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 200,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 10
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
+    <script>
+        // 获取弹窗元素
+        const appModal = document.getElementById('appModal');
+        const appInfoBtn = document.getElementById('appInfoBtn');
+
+        // 显示弹窗
+        appInfoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            appModal.style.display = 'flex';
+            // 触发重排以启动动画
+            void appModal.offsetWidth;
+            appModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        });
+
+        // 点击弹窗外部关闭
+        appModal.addEventListener('click', function(e) {
+            if (e.target === appModal) {
+                closeModal();
+            }
+        });
+
+        // 关闭弹窗函数
+        function closeModal() {
+            appModal.classList.remove('active');
+            setTimeout(() => {
+                appModal.style.display = 'none';
+                document.body.style.overflow = ''; // 恢复背景滚动
+            }, 300);
+        }
+
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && appModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
